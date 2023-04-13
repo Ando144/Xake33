@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author asier
- *
- */
-module PmoboProiektua {
-}
