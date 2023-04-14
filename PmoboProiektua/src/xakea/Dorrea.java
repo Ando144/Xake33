@@ -10,6 +10,9 @@ public class Dorrea extends Pieza {
     {
     	int maximoa =0;
     	
+    	
+    	
+    	
     	if (N1 > N2)
     	{
     		maximoa =N1;
