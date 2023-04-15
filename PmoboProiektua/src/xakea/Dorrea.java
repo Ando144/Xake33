@@ -24,7 +24,7 @@ public class Dorrea extends Pieza {
     	return maximoa;
     }
    
- public int minimoaKalkulatu(int N1, int N2) 
+    public int minimoaKalkulatu(int N1, int N2) 
     {
     	int minimoa =0;
     	
@@ -39,18 +39,12 @@ public class Dorrea extends Pieza {
     	return minimoa;
     }
   
- public boolean noraMugitzenDa(int N1,int N2) 
-    {
-	 //un metodo para ver en que direccion va la ficha 
-    	boolean Nora= false;
-    	
-    	return Nora;
-    }
-    
+
     @Override
     public boolean mugituDaiteke(int zeinErrenkadara, int zeinZutabera) {
     	int lerro=0;
     	int zut=0;
+    	int kont =0;
     	boolean ahalDu = true;
     	
     	//un while para que vaya iterando y que salga cuando llegue a la columna 
@@ -59,11 +53,57 @@ public class Dorrea extends Pieza {
     	{
     		if (zeinErrenkadara == this.getErrenkada())
     		{
-    			
+    			if (this.getZutabea()>zeinZutabera) 
+    			{
+    				kont=this.getZutabea();
+    				while(kont != zeinZutabera) 
+    				{
+    					if(Taula.getTaula().laukiaBetetaDago(this.getErrenkada(), kont)) 
+    					{
+    						ahalDu=false;
+    					}
+    					kont=kont-1;
+    				}
+    			}
+    			else 
+    			{
+    				kont=this.getZutabea();
+    				while(kont != zeinZutabera) 
+    				{
+    					if(Taula.getTaula().laukiaBetetaDago(this.getErrenkada(), kont)) 
+    					{
+    						ahalDu=false;
+    					}
+    					kont=kont+1;
+    				}
+    			}
     		}
     		else 
     		{
-    			
+    			if (this.getErrenkada()>zeinErrenkadara) 
+    			{
+    				kont=this.getErrenkada();
+    				while(kont != zeinErrenkadara) 
+    				{
+    					if(Taula.getTaula().laukiaBetetaDago( kont,this.getZutabea())) 
+    					{
+    						ahalDu=false;
+    					}
+    					kont=kont-1;
+    				}
+    			}
+    			else 
+    			{
+    				kont=this.getErrenkada();
+    				while(kont != zeinErrenkadara) 
+    				{
+    					if(Taula.getTaula().laukiaBetetaDago(kont, this.getErrenkada())) 
+    					{
+    						ahalDu=false;
+    					}
+    					kont=kont+1;
+    				}
+    			}
     		}
     	}
     	return ahalDu;

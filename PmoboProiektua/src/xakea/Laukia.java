@@ -22,7 +22,7 @@ public class Laukia {
     public boolean laukiaHutsikDago(int err, int zut) {
         return this.getPieza()==null;
     }
-
+   
 }
 
 

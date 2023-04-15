@@ -62,7 +62,7 @@ public class Taula {
     
     public boolean laukiaBetetaDago(int xDim, int yDim) {
     	if (laukiaTaulanDago(xDim, yDim)) {
-    		if (this.laukiak[xDim][yDim]==null) {
+    		if (this.laukiak[xDim][yDim]!=null) {
     			return true;
     		}
     	}return false;

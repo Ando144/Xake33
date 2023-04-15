@@ -1,5 +1,7 @@
 package xakea;
 
+
+
 public abstract class Pieza {
     private boolean zuria;
     private int errenkada;
@@ -26,7 +28,7 @@ public abstract class Pieza {
     public void setErrenkada(int x) {
         this.errenkada = x;
     }
-
+    
     public void setZutabea(int y) {
         this.zutabea = y;
     }
